@@ -1,0 +1,94 @@
+*{
+    margin:0;
+}
+html {
+    height: 100%;
+    width: 100%;
+    }
+body {
+    position: relative;
+    background-color: #1e1313;
+}
+header {
+    background-color: #FAD1B0;
+}
+main {
+    position: static;
+    background-color: #FAD1B0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 4rem);
+}
+@font-face {
+    font-family: 'papyrus';
+    src: url("./papyrus.ttf");
+}
+h1, h3, p {
+    font-family: 'papyrus','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.mt-4 {
+    margin-top: 1rem;
+}
+.mt-8 {
+    margin-top: 1rem;
+}
+.mt-12 {
+    margin-top: 3rem;
+}
+.mt-20 {
+    margin-top: 5rem;
+}
+.mt--20 {
+    margin-top: -5rem;
+}
+
+.mid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+}
+p {
+    font-size: 1.2rem;
+}
+footer{
+    background-color: rgb(30, 19, 19);
+    height: 4rem;
+    width: 100%;
+    width:100%;
+}
+img {
+    width: 350px;
+    height: auto;
+}
+@media only screen and (max-width: 840px) {
+    .mid {
+        gap: 0rem;
+        width: 80%;
+        max-width: 350px;
+        margin: auto;
+        height: auto;
+        min-height: 100vh;
+        padding-bottom: 5rem;
+        flex-direction: column;
+    }
+    h1,h2,h3,p{
+        margin-top: 0;
+        text-align: center;
+    }
+    img{
+        width: 100%;
+    }
+    .mt-12 {
+        margin-top: 2rem;
+    }
+    main {
+        min-height: auto;
+    }
+    footer{
+        height: 4rem;
+        width: 100%;
+    
+    }
+}
