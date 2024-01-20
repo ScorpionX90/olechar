@@ -21,8 +21,36 @@
                 </div>
             </div>
         </div>
+        <div id="deltaker_form">
+            <h3 id="deltakelse_tittel">Meld din Deltakelse!</h3>
+            <form action="#" class="dForm" id="dForm">
+                <p class="personNumber">Person 1</p>
+                <div class="inpCont">
+                    <div class="mb-4 relative mt-10 lg:mb-2">
+                        <input class="fornavn input block formInp w-full py-2 border-b w-full h-8 bg-gray-900" type="text" name="email" id="emailInp" placeholder="Your Email adress" required>
+                        <label class="block lg:text-sm" for="FornavnInp">Fornavn</label>
+                    </div>
+                    <div class="mb-4 relative mt-10 lg:mb-2">
+                        <input class="etternavn input block formInp w-full py-2 border-b w-full h-8 bg-gray-900" type="text" name="email" id="emailInp" placeholder="Your Email adress" required>
+                        <label class="block lg:text-sm" for="EtternavnInp">Etternavn</label>
+                    </div>
+                    <div class="mb-4 relative mt-10 lg:mb-2">
+                        <input class="tlf input block formInp w-full py-2 border-b w-full h-8 bg-gray-900" type="number" format="xx xxx xx" name="email" id="emailInp" placeholder="Your Email adress" required>
+                        <label class="block lg:text-sm" for="TlfInp">Telefonummer</label>
+                    </div>
+                    <div class="overnatting_cont relative">
+                        <input type="checkbox" name="overnatting" class="overnatting">
+                        <label class="block lg:text-sm" for="emailInp" style="top: 0%;">Jeg Trenger Overnatting</label>
+                    </div>
+                    <button type="button" class="removeBtn">Fjern</button>
+                </div>  
+            </form>
+            <button id="nyPersonKnapp">+ Legg til person</button>
+            <button type="submit" form="dForm" id="dFormSend">Send ></button>
+        </div>
     </main>
     <footer>
     </footer>
+    <script type="module" src="main.js"></script>
 </body>
 </html>
