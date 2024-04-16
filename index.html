@@ -9,44 +9,96 @@
 </head>
 <body>
     <main>
-        <div id="backdrop"></div>
-        <div class="mid">
-            <img src="Bilde1.svg" width="350px">
-            <div>
-                <h1 class="mt-12">Bryllupsinfo </h1>
-                <h3 class="mt-4">Charlotte Lisa Sørensen - Ole Martin Nestvold</h3>
-                <p>&#9901;  30.11.2024  &#9901;</p>
-                <div class="mt-12">
-                    <p>All info relatert til bryllupet vårt <br> vil bli lagt ut her fortløpende</p>
+        <div id="backdrop" class="w-full">
+            <div class="mid">
+                <img src="Bilde1.svg" width="350px">
+                <div>
+                    <h1 class="mt-12">Bryllupsinfo </h1>
+                    <h3 class="mt-4">Charlotte Lisa Sørensen - Ole Martin Nestvold</h3>
+                    <p id="place">&#9901;  30.11.2024  &#9901;</p>
+                    <div class="mt-12">
+                        <p id="location">Tune Kirke, Sarpsborg kl 13.00</p>
+                    </div>
                 </div>
             </div>
         </div>
-        <div id="deltaker_form">
-            <h3 id="deltakelse_tittel">Meld din Deltakelse!</h3>
-            <form action="#" class="dForm" id="dForm">
-                <p class="personNumber">Person 1</p>
-                <div class="inpCont">
-                    <div class="mb-4 relative mt-10 lg:mb-2">
-                        <input class="fornavn input block formInp w-full py-2 border-b w-full h-8 bg-gray-900" type="text" name="email" id="emailInp" placeholder="Your Email adress" required>
-                        <label class="block lg:text-sm" for="FornavnInp">Fornavn</label>
+        <div id="mainCont">
+            <div id="deltaker_form">
+                <h3 id="deltakelse_tittel">Meld din Deltakelse!</h3>
+                <form action="#" class="dForm mt-10" id="dForm">
+                    <p class="personNumber">Person 1</p>
+                    <div class="inpCont">
+                        <div class="mb-4 relative mt-8 lg:mb-2">
+                            <input class="fornavn input block formInp w-full py-2 border-b w-full h-8 bg-gray-900" type="text" name="email" id="emailInp" required>
+                            <label class="block lg:text-sm" for="FornavnInp">Fornavn</label>
+                        </div>
+                        <div class="mb-4 relative mt-8 lg:mb-2">
+                            <input class="etternavn input block formInp w-full py-2 border-b w-full h-8 bg-gray-900" type="text" name="email" id="emailInp" required>
+                            <label class="block lg:text-sm" for="EtternavnInp">Etternavn</label>
+                        </div>
+                        <div class="mb-4 relative mt-8 lg:mb-2">
+                            <input class="tlf input block formInp w-full py-2 border-b w-full h-8 bg-gray-900" type="text" pattern="[0-9]{8}" name="email" id="emailInp" required>
+                            <label class="block lg:text-sm" for="TlfInp">Telefonummer (8 siffer)</label>
+                        </div>
+                        <div id="overnatting_cont" class="relative">
+                            <div class="overnatting-inner-cont">
+                                <input type="checkbox" name="overnatting" id="overnatting" class="overnatting">
+                                <label class="relative" for="overnatting">Trenger overnatting</label>   
+                            </div>       
+                        </div>
+                    </div>  
+                </form>
+                <div class="nyPersonKnappCont mt-10">
+                    <div>
+                        <button id="nyPersonKnapp"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="45" height="45" viewBox="8 5 37 42">
+                            <defs>
+                              <filter id="Ellipse_1" x="0" y="0" width="54" height="54" filterUnits="userSpaceOnUse">
+                                <feOffset dy="3" input="SourceAlpha"/>
+                                <feGaussianBlur stdDeviation="3" result="blur"/>
+                                <feFlood flood-opacity="0.161"/>
+                                <feComposite operator="in" in2="blur"/>
+                                <feComposite in="SourceGraphic"/>
+                              </filter>
+                              <filter id="Ellipse_1-2" x="0" y="0" width="54" height="54" filterUnits="userSpaceOnUse">
+                                <feOffset dy="3" input="SourceAlpha"/>
+                                <feGaussianBlur stdDeviation="3" result="blur-2"/>
+                                <feFlood flood-opacity="0.161" result="color"/>
+                                <feComposite operator="out" in="SourceGraphic" in2="blur-2"/>
+                                <feComposite operator="in" in="color"/>
+                                <feComposite operator="in" in2="SourceGraphic"/>
+                              </filter>
+                            </defs>
+                            <g id="Group_1" data-name="Group 1" transform="translate(-401 -784)">
+                              <g data-type="innerShadowGroup">
+                                <g transform="matrix(1, 0, 0, 1, 401, 784)" filter="url(#Ellipse_1)">
+                                  <circle id="Ellipse_1-3" data-name="Ellipse 1" cx="18" cy="18" r="18" transform="translate(9 6)" fill="#fff"/>
+                                </g>
+                                <g transform="matrix(1, 0, 0, 1, 401, 784)" filter="url(#Ellipse_1-2)">
+                                  <circle id="Ellipse_1-4" data-name="Ellipse 1" cx="18" cy="18" r="18" transform="translate(9 6)" fill="#fff"/>
+                                </g>
+                              </g>
+                              <text id="_" data-name="+" transform="translate(419 820)" fill="#707070" font-size="33" font-family="ArialMT, Arial"><tspan x="0" y="0">+</tspan></text>
+                            </g>
+                          </svg>
+                          </button>
+                        <p>Legg til person</p>
                     </div>
-                    <div class="mb-4 relative mt-10 lg:mb-2">
-                        <input class="etternavn input block formInp w-full py-2 border-b w-full h-8 bg-gray-900" type="text" name="email" id="emailInp" placeholder="Your Email adress" required>
-                        <label class="block lg:text-sm" for="EtternavnInp">Etternavn</label>
+                    <div>
+                    <button type="submit" form="dForm" id="dFormSend">Send <svg xmlns="http://www.w3.org/2000/svg" width="23.5" height="21.414" viewBox="0 0 23.5 21.414">
+                        <g id="Path_1" data-name="Path 1" transform="translate(23.5) rotate(90)" fill="#707070">
+                          <path d="M 20.15666007995605 21.94681549072266 C 19.64224624633789 21.59794425964355 19.01919364929199 21.2022533416748 18.31305885314941 20.80489921569824 C 15.57307910919189 19.26306915283203 13.01398849487305 18.48130035400391 10.70687866210938 18.48130035400391 C 8.399768829345703 18.48130035400391 5.840678691864014 19.26306915283203 3.100698709487915 20.80489921569824 C 2.394563913345337 21.2022533416748 1.77151083946228 21.59794425964355 1.257096767425537 21.94681549072266 L 10.70687866210938 1.205956935882568 L 20.15666007995605 21.94681549072266 Z" stroke="none"/>
+                          <path d="M 10.70687866210938 2.411924362182617 L 2.410703659057617 20.62078666687012 C 4.565938949584961 19.35085678100586 7.608608245849609 17.98130035400391 10.70687866210938 17.98130035400391 C 13.80514907836914 17.98130035400391 16.84781837463379 19.35085678100586 19.00305366516113 20.62078666687012 L 10.70687866210938 2.411924362182617 M 10.70687866210938 0 L 21.41375923156738 23.5 C 21.41375923156738 23.5 16.06031799316406 18.98130035400391 10.70687866210938 18.98130035400391 C 5.353439331054688 18.98130035400391 -1.9073486328125e-06 23.5 -1.9073486328125e-06 23.5 L 10.70687866210938 0 Z" stroke="none" fill="#707070"/>
+                        </g>
+                      </svg>
+                    </button>
                     </div>
-                    <div class="mb-4 relative mt-10 lg:mb-2">
-                        <input class="tlf input block formInp w-full py-2 border-b w-full h-8 bg-gray-900" type="number" format="xx xxx xx" name="email" id="emailInp" placeholder="Your Email adress" required>
-                        <label class="block lg:text-sm" for="TlfInp">Telefonummer</label>
-                    </div>
-                    <div class="overnatting_cont relative">
-                        <input type="checkbox" name="overnatting" class="overnatting">
-                        <label class="block lg:text-sm" for="emailInp" style="top: 0%;">Jeg Trenger Overnatting</label>
-                    </div>
-                    <button type="button" class="removeBtn">Fjern</button>
-                </div>  
-            </form>
-            <button id="nyPersonKnapp">+ Legg til person</button>
-            <button type="submit" form="dForm" id="dFormSend">Send ></button>
+                </div>
+                <p class="registrationStatus mt-8">Registrering velykket</p>
+            </div>
+            <div class="info-cont">
+                <h2>Info</h2>
+                <p><b>14. April 2024</b> - Hei alle sammen! Det er nå opprettet et påmeldingsskjema hvor dere kan gi beskjed om deltakelse i bryllupet.<br><br> Det er ordnet med overnatting på Degernes for de aktuelle dagene. Om dere trenger overnatting krysser dere av for "trenger overnatting" i skjemaet over. Dere kan eventuelt ta kontakt på telefon +47 919 17 274, for å melde om deltakelse og overnatting. <b>Frist for påmelding er 31. August</b><br><br>Bruden ønsker også å presisere at Kleskoden for bryllupet er pent kledd i tilfelle det skulle være tvil om det. <br><br> Mer info legges ut fortløpende!</p>
+            </div>
         </div>
     </main>
     <footer>
