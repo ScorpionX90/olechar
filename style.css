@@ -10,24 +10,36 @@ body {
     background-color: #1e1313;
 }
 header {
-    background-color: #FAD1B0;
+    background-color: #eee;
 }
 main {
     position: static;
-    background-color: #FAD1B0;
+    background-color: #eee;
     display: flex;
     flex-direction: column;
     justify-content: start;
     align-items: center;
-    padding-top: 8rem;
     min-height: calc(100vh - 4rem);
 }
 @font-face {
     font-family: 'papyrus';
     src: url("./papyrus.ttf");
 }
-h1, h3, p {
+h1, h3, p, button {
     font-family: 'papyrus','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+#mainCont {
+  background-color: #eee;
+  width: 100%;
+}
+#backdrop {
+  height: 700px;
+  background: url("backdrop.jpg");
+  background-size: max(2500px, 100%);
+  background-position: 80% 35%;
+  backdrop-filter: blur(12px);
 }
 .mt-4 {
     margin-top: 1rem;
@@ -47,11 +59,12 @@ h1, h3, p {
 .mt--20 {
     margin-top: -5rem;
 }
-
+.w-full {
+  width: 100%;
+}
 #deltakelse_tittel {
     width: 100%;
     text-align: center;
-    margin-top: 1rem;
     font-size: 1.5rem;
 }
 
@@ -80,45 +93,51 @@ textarea::placeholder {
     font-size: 0;
     margin-bottom: 2rem;
     padding-left: 0.5rem;
-    width: 100%;
+    width: 95%;
     height: 1.5rem;
     padding: 0.75rem 0.5rem; 
     border-radius: 8px;
     border: none;
     background-color: #fff;
+    box-shadow: 0px 3px 6px #00000029,
+                inset 0px 3px 6px #00000029
   }
 
-  .overnatting {
+  #overnatting_cont {
+    width: 25%;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+  } 
+  .overnatting-inner-cont {
+    display: flex;
+    justify-content: flex-start;
+    gap: .5rem;
+    flex-grow: 1;
+  }
+
+ #overnatting {
     width: 1.25rem;
     height: 1.25rem;
+    background: #fff;
     border: none;
     outline: none;
+    border-radius: 50%;
+    box-shadow: 0px 3px 6px #00000029,
+    inset 0px 3px 6px #00000029
   }
+
 
   form label {
     position: absolute;
-    top: 17.5%;
+    top: 18.5%;
+    left: 0;
     padding: 0 0.5rem;
-    width: 45%;
     transition: all 0.2s ease;
     z-index: 10;
     font-family: Verdana;
     font-size: 0.85rem;
-  }
-
-  form label {
-    position: absolute;
-    top: 17.5%;
-    padding: 0 0.5rem;
-    width: 45%;
-    transition: all 0.2s ease;
-    z-index: 10;
-    font-family: Verdana;
-    font-size: 0.85rem;
-  }
-  
-  .overnatting_cont{
-    width: 100% !important;
   }
 
   form p {
@@ -131,10 +150,21 @@ textarea::placeholder {
     flex-wrap: wrap;
     width: 100%;
     margin-top: 0rem;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  #place, #location {
+    font-size: 1.25rem;
+    font-weight: 800;
+  }
+
+  .registrationStatus {
+    display: none;
   }
 
   .inpCont div {
-    width: 30%;
+    width: 20%;
   }
   
   .relative {
@@ -163,28 +193,32 @@ textarea::placeholder {
 
 #deltaker_form {
     position: relative;
-    width: 75%;
-    margin: 4rem auto;
-    background-color: hsl(27 84% 78%);
+    width: 80%;
+    margin: -4rem auto 4rem ;
+    background-color: #a2afb1;
     padding: 4rem;
     border-radius: 10px;
-    max-width: 1300px
+    max-width: 1300px;
+    box-shadow: 0 5px 6px #00000050;
 }
 
 #dForm {
     display: flex;
     flex-direction: column;
     width: 100%;
-}
+} 
 
 .mid {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 5rem;
+    width: 100%;
+    padding-top: 10rem;
+    padding-bottom: 8rem;
 }
 p {
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 footer{
     background-color: rgb(30, 19, 19);
@@ -197,29 +231,119 @@ img {
     height: auto;
 }
 
+.nyPersonKnappCont, .nyPersonKnappCont div{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .5rem;
+}
+
 #nyPersonKnapp, #dFormSend {
-    margin-top: 6rem;
     border: none;
-    background: white;
-    padding: 0.5rem 1rem;
+    background: none;
     border-radius: 10px;
+    padding: 0;
+}
+
+#send-label {
+  margin-left: 4rem;
+  margin-right: .5rem;
 }
 
 #dFormSend {
-    margin-left: 2rem;
-    background:
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
-@media only screen and (max-width: 1000px) {
-    .inpCont div {
-        width: 90%;
-        margin: auto 2rem;
-      }
 
-    #deltaker_form {
-        width: 100%; 
-        padding: 0;
+.info-cont {
+  width: 50%;
+  height: auto;
+  padding-bottom: 5rem;
+  margin: 0 auto;
+}
+
+.info-cont p, .info-cont h2 {
+  font-family: Sans-serif;
+  margin-top: 2rem;
+  line-height: 2.5rem;
+  font-size: 18px;
+}
+
+.info-cont h2 {
+  font-size: 2rem;
+}
+
+.info-cont p {
+  text-align: left;
+}
+
+@media only screen and (max-width: 1200px) { 
+  form label {
+    font-size: 0.75rem;
+  }
+
+  
+  .info-cont {
+    width: 80%;
+    height: auto;
+    padding-bottom: 5rem;
+    margin: 0 auto;
+  }
+
+
+  #overnatting_cont {
+    width: 20%;
+  }
+}
+
+
+@media only screen and (max-width: 1000px) {
+  .inpCont div, form p {
+      width: 45%;
+      margin: 0;
     }
+
+
+  .formInp {
+    margin-bottom: 0;
+  }
+
+  form p{
+    margin-bottom: 2rem;
+    text-align: left;
+  }
+
+  form label {
+    top: 31.5%;
+
+  }
+
+  #overnatting_cont {
+    justify-content: start;
+    flex-basis: 45%;
+    align-items: center;
+  }
+
+  #deltakelse_tittel {
+    padding-top: 2rem;
+  }
+
+  #deltaker_form {
+      width: 80%; 
+      padding: 2rem;
+      margin-top: -5rem;
+  }
+
+  #dForm {
+    margin-top: 2rem;
+  }
+
+  .personNumber {
+    margin-top: 2rem;
+  }
 }
 
 @media only screen and (max-width: 840px) {
@@ -231,6 +355,7 @@ img {
         height: auto;
         min-height: 600px;
         padding-bottom: 5rem;
+        padding-top: 2rem;
         flex-direction: column;
     }
     h1,h2,h3,p{
@@ -251,6 +376,30 @@ img {
         width: 100%;
     
     }
+    
+    #backdrop {
+      height: 950px;
+    }
 }
 
-/*Kommentar*/
+@media only screen and (max-width: 840px) {
+
+  .inpCont div, form p, #overnatting_cont {
+    width: 100%;
+    margin: 0 auto;
+    flex-basis: 100%;
+  }
+
+  .inpCont {
+    margin-top: 2rem;
+  }
+
+  #dForm {
+    margin-top: 2rem;
+  }
+
+  .nyPersonKnappCont {
+    margin-top: 4rem;
+  }
+
+}
